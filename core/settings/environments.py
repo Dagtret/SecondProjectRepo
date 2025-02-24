@@ -1,5 +1,5 @@
 from enum import Enum
 
-class Enviroment(Enum):
+class Environment(Enum):
     TEST = 'test'
     PROD = 'production'
