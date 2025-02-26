@@ -63,9 +63,9 @@ class APIclient:
         with allure.step('Updating header with authorization'):
             self.session.headers.update({'Authorization': f'Bearer {token}'})
 
-    def get_booking_by_id(self):
+    def get_booking_by_id(self, id='1'):
         with allure.step('Get booking by id'):
-            url = f'{self.base_url}{Endpoints.BOOKING_ENDPOINT}'
+            url = f'{self.base_url}{Endpoints.BOOKING_ENDPOINT}/{id}'
             response = self.session.get(url)
             response.raise_for_status()
         with allure.step('Assert status code'):
